@@ -1,0 +1,22 @@
+#create based image (get node image from repository hub)
+
+FROM node:16-alpine
+
+# set wroking directory 
+WORKDIR '/app'
+
+# copy package.js to /app folder 
+COPY package.json .
+
+# buil dependency and install nodejs
+RUN npm install
+
+#copy everyting (all floder and dependency) to our project directory /app
+COPY . .
+
+#below command execute by container
+CMD ["npm","run","start"]
+
+
+
+
