@@ -14,5 +14,6 @@ RUN npm run build
 #react as single page application so few page is there in builder folder
 #that we can use for run the application.
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
